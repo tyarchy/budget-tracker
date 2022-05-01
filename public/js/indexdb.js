@@ -25,7 +25,7 @@ request.onerror = function (event) {
     console.log(event.target.errorCode);
 };
 
-function saveRecord(record) {
+function saveRecord(transaction) {
     // open a new transaction with the database with read and write permissions 
     const transaction = db.transaction(['new_transaction'], 'readwrite');
   
