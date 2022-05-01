@@ -25,7 +25,7 @@ request.onerror = function (event) {
     console.log(event.target.errorCode);
 };
 
-function saveRecord(transaction) {
+function saveRecord(record) {
     // open a new transaction with the database with read and write permissions 
     const transaction = db.transaction(['new_transaction'], 'readwrite');
   
@@ -33,7 +33,7 @@ function saveRecord(transaction) {
     const budgetObjectStore = transaction.objectStore('new_transaction');
   
     // add record to your store with add method
-    budgetObjectStore.add(transaction);
+    budgetObjectStore.add(record);
   };
 
   function uploadTransaction() {
